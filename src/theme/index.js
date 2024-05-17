@@ -3,32 +3,35 @@ import { createTheme } from "@mui/material/styles";
 export default createTheme({
   palette: {
     background: {
-      default: "#121212"
+      default: "#050704"
     },
 
     text: {
-      primary: "#FFFFFF"
+      primary: "#FFFFFF",
+      secondary: "#BBBBBB"
     }
   },
   typography: {
-    fontFamily: ["Urbanist", "Neat Chalk", "Caveat Brush", "sans-serif"],
+    fontFamily: ["Monsterrat", "sans-serif"],
     fontSize: 16,
     h1: {
-      fontFamily: "Urbanist",
-      color: "#FFFFFF",
-      fontSize: "11.5rem",
+      fontFamily: "Montserrat",
+      color: "#BBBBBB",
+      textAlign: "left",
+      fontSize: "1.75rem",
       fontStyle: "normal",
       fontWeight: "700",
-      lineHeight: "90%"
+      lineHeight: "normal",
+      letterSpacing: "-0.0875rem"
     },
 
     h2: {
-      fontFamily: "Urbanist",
-      color: "#FFFFFF",
-      fontSize: "3.125rem",
+      fontFamily: "Montserrat",
+      color: "#C60000",
+      fontSize: "1.5625rem",
       fontStyle: "normal",
       fontWeight: "700",
-      lineHeight: "100%"
+      lineHeight: "normal"
     },
 
     h3: {
@@ -50,52 +53,23 @@ export default createTheme({
     },
 
     navLinks: {
-      fontFamily: "Urbanist",
-      color: "#AAAAAA",
+      color: "#FFFFFF",
+      fontFamily: "Montserrat",
       fontSize: "1.125rem",
       fontStyle: "normal",
-      fontWeight: "600",
-      lineHeight: "normal",
-      textDecoration: "none"
+      fontWeight: "400",
+      lineHeight: "normal"
     },
     text: {
-      fontFamily: "Urbanist",
-      fontSize: "1.375rem",
+      color: "rgba(187, 187, 187, 0.73)",
+      fontFamily: "Montserrat",
+      fontSize: "1.125rem",
       fontStyle: "normal",
-      fontWeight: "600",
-      lineHeight: "112%"
-    },
-    
-    workPosition:{
-      color: "#595959",
-      fontFamily: "Urbanist",
-      fontSize: "1.5rem",
-      fontStyle: "normal",
-      fontWeight: "600",
-      lineHeight: "112%"
+      fontWeight: "400",
+      lineHeight: "normal"
     }
   },
-  components: {
-    MuiButton: {
-      defaultProps: {
-        style: {          
-          strokeWidth: "6px",
-          border: "solid 6px #22505D",
-          borderRadius: "10px",
-          background:"#121212" ,
-          width: "30.125rem",
-          height: "7.125rem",
-          flexShrink: 0,
-          color: "#FFF",
-          fontFamily: "Urbanist",
-          fontSize: "1.625rem",
-          fontStyle: "normal",
-          fontWeight: "700",
-          lineHeight: "112%" 
-        }
-      }
-    }
-  },
+  components: {},
   breakpoints: {
     values: {
       xs: 0,
@@ -109,6 +83,6 @@ export default createTheme({
   },
   sizes: {
     header: 15,
-    sidebar: 30
+    footer: 30
   }
 });
