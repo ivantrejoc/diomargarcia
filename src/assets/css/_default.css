@@ -2,3 +2,8 @@
   padding: 0;
   margin-left: 0;
 }
+
+#logo-header{
+  width: 9rem;
+  height: 9rem;
+}

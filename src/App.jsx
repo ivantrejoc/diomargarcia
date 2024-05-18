@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 import Router from "./router"
 import theme from "./theme"
+import Header from "./components/header/Header.jsx"
 import "swiper/css"
 import "swiper/css/pagination"
 import "./assets/css/_default.css"
@@ -17,6 +18,7 @@ function App() {
       <CssBaseline />
       {/*  <Loader show={config.loading} /> */}
       <BrowserRouter>
+      <Header />
         <Router />
       </BrowserRouter>
     </ThemeProvider>

@@ -1,6 +1,7 @@
 import "../assets/css/_default.css";
-import { useTheme } from '@mui/material/styles';
-import{ Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Box, Typography, Link } from "@mui/material";
+
 
 export default function Landing() {
   const theme = useTheme();
@@ -18,7 +19,7 @@ export default function Landing() {
         backgroundSize: "cover"
       }}
     >
-      <Typography variant="h1" component="h1">DIOMAR GARCIA EVENTOS</Typography>
+      <Typography variant="h1" component="h1">HOME</Typography>
     </Box>
   );
 }
