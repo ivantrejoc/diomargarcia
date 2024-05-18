@@ -2,7 +2,6 @@ import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link } from "@mui/material";
 
-
 export default function Landing() {
   const theme = useTheme();
 
@@ -12,14 +11,61 @@ export default function Landing() {
       sx={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "stretch",
+        alignItems: "start",
         flexDirection: "column",
-        position: "relative",
+        width: "100vw",
+        maxWidth: "100vw",
+        height: "100vh",
+        // position: "relative",
         backgroundColor: theme.palette.background.default,
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        overflow: "hidden"
       }}
     >
-      <Typography variant="h1" component="h1">HOME</Typography>
+      <Box
+        id="main-video"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+          maxWidth: "100%",
+          position: "relative",
+          backgroundSize: "cover"
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            position: "absolute",
+            top: 0,
+            left: 0
+            // zIndex: -1
+          }}
+        >
+          <source src="/public/videos/short-silvestre.mp4" type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </Box>
+      <Typography
+        variant="h1"
+        component="h1"
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          color: theme.palette.text.primary,
+          marginTop: "2rem",
+          padding: "0 2rem"
+        }}
+      >
+        HOME
+      </Typography>
     </Box>
   );
 }
