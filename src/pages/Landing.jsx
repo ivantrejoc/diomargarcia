@@ -49,7 +49,7 @@ export default function Landing() {
             // zIndex: -1
           }}
         >
-          <source src="/public/videos/short-silvestre.mp4" type="video/mp4" />
+          <source src="https://fileblocks.co/file/avovite/ffbb4a354f55bc24618622add3821c40.mp4" type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
       </Box>
