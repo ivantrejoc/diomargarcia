@@ -3,7 +3,13 @@
   margin-left: 0;
 }
 
-#logo-header{
+#logo-header, #logo-footer{
   width: 9rem;
   height: 9rem;
+}
+
+
+.social-icons{
+  width: 4rem;
+  height: 4rem;
 }

@@ -2,6 +2,7 @@ import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link } from "@mui/material";
 
+
 export default function Landing() {
   const theme = useTheme();
 
@@ -49,7 +50,10 @@ export default function Landing() {
             // zIndex: -1
           }}
         >
-          <source src="https://fileblocks.co/file/avovite/ffbb4a354f55bc24618622add3821c40.mp4" type="video/mp4" />
+          <source
+            src="https://fileblocks.co/file/avovite/ffbb4a354f55bc24618622add3821c40.mp4"
+            type="video/mp4"
+          />
           Tu navegador no soporta la etiqueta de video.
         </video>
       </Box>
@@ -66,6 +70,7 @@ export default function Landing() {
       >
         HOME
       </Typography>
+      
     </Box>
   );
 }
