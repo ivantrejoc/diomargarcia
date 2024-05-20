@@ -1,6 +1,6 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link, Button } from "@mui/material";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 
 export default function Landing() {
@@ -16,7 +16,7 @@ export default function Landing() {
         flexDirection: "column",
         position: "relative",
         width: "100vw",
-        height: "300vh",        
+        height: "300vh"
       }}
     >
       {/* VIDEO SECTION */}
@@ -93,7 +93,6 @@ export default function Landing() {
         <Box
           id="hero-container"
           sx={{
-            background: "lightgreen",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -104,9 +103,35 @@ export default function Landing() {
             backgroundImage: `url(${heroSilvestre})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
-            borderRadius: 5
+            borderRadius: 5,
+            marginBottom: 2
           }}
-        ></Box>
+        />
+        <Button
+          href="https://tuboleta.com/"
+          component="a"
+          sx={{
+            width: "22.6875rem",
+            height: "3.9375rem",
+            flexShrink: 0,
+            boxSizing: "border-box",
+            borderRadius: "1.5625rem",
+            background: "#D9D9D9",
+            color: "#000",
+            fontFamily: "Montserrat",
+            fontSize: "1.875rem",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "120%",
+            textTransform: "none",
+            '&:hover': {
+              background: "#B0B0B0", 
+              color: "#fff"
+          }
+          }}
+        >
+          Comprar Tickets
+        </Button>
       </Box>
     </Box>
   );
