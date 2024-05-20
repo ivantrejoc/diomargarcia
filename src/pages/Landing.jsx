@@ -1,7 +1,7 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link } from "@mui/material";
-
+import heroSilvestre from "../assets/img/hero-party-1.jpg";
 
 export default function Landing() {
   const theme = useTheme();
@@ -11,18 +11,15 @@ export default function Landing() {
       id="main-body"
       sx={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "start",
+        justifyContent: "start",
+        alignItems: "stretch",
         flexDirection: "column",
+        position: "relative",
         width: "100vw",
-        maxWidth: "100vw",
-        height: "100vh",
-        // position: "relative",
-        backgroundColor: theme.palette.background.default,
-        backgroundSize: "cover",
-        overflow: "hidden"
+        height: "300vh",        
       }}
     >
+      {/* VIDEO SECTION */}
       <Box
         id="main-video"
         sx={{
@@ -30,10 +27,12 @@ export default function Landing() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          height: "100%",
-          maxWidth: "100%",
+          height: "50%",
+          marginBottom: 10,
+          // maxWidth: "100%",
           position: "relative",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
+          overflow: "hidden"
         }}
       >
         <video
@@ -57,20 +56,58 @@ export default function Landing() {
           Tu navegador no soporta la etiqueta de video.
         </video>
       </Box>
-      <Typography
-        variant="h1"
-        component="h1"
+
+      {/* MAIN EVENT HERO */}
+      <Box
+        id="main-event-hero"
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "90vh",
+          maxHeight: "90vh",
           position: "relative",
-          zIndex: 1,
-          color: theme.palette.text.primary,
-          marginTop: "2rem",
-          padding: "0 2rem"
+          overflow: "hidden"
         }}
       >
-        HOME
-      </Typography>
-      
+        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+          <Box component="span" sx={{ textDecoration: "underline" }}>
+            EVENTO
+          </Box>
+          <Box
+            component="span"
+            sx={{
+              color: "#FFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.5625rem",
+              fontStyle: "normal",
+              fontWeight: "500",
+              lineHeight: "normal"
+            }}
+          >
+            PRINCIPAL
+          </Box>
+        </Typography>
+        <Box
+          id="hero-container"
+          sx={{
+            background: "lightgreen",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "95%",
+            height: "100%",
+            // maxWidth: "100%",
+            position: "relative",
+            backgroundImage: `url(${heroSilvestre})`,
+            backgroundSize: "100% 100%",
+            backgroundPosition: "center",
+            borderRadius: 5
+          }}
+        ></Box>
+      </Box>
     </Box>
   );
 }
