@@ -2,6 +2,7 @@ import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link, Button } from "@mui/material";
 import Carosuel from "../components/carousel/Carousel";
+import VideoGallery from "../components/videoGallery/VideoGallery";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 import concertBackground from "../assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg";
 
@@ -17,7 +18,7 @@ export default function Landing() {
         alignItems: "stretch",
         flexDirection: "column",
         position: "relative",
-        width: "100vw",
+        width: "100vw"
         // height: "800vh"
       }}
     >
@@ -190,6 +191,29 @@ export default function Landing() {
         >
           <Carosuel />
         </Box>
+      </Box>
+      {/* VIDEOS SECTION */}
+      <Box
+        id="video-gallery-container"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+          marginBottom: 10,
+          // maxWidth: "100%",
+          position: "relative"
+        }}
+      >
+        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+          <Box component="span" sx={{ textDecoration: "underline" }}>
+            VIDEO
+          </Box>
+        
+        </Typography>
+        <VideoGallery />
       </Box>
     </Box>
   );
