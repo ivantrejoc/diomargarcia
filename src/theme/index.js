@@ -35,7 +35,7 @@ export default createTheme({
     },
 
     h3: {
-      fontFamily: "Urbanist",
+      fontFamily: "Montserrat",
       color: "#FFFFFF",
       fontSize: "1.875rem",
       fontStyle: "normal",

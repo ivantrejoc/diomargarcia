@@ -1,7 +1,9 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link, Button } from "@mui/material";
+import EventCard from "../components/eventCard/EventCard";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
+import carlosVivesEvent from "../assets/img/mini-hero-5.jpg";
 
 export default function Landing() {
   const theme = useTheme();
@@ -124,14 +126,32 @@ export default function Landing() {
             fontWeight: "500",
             lineHeight: "120%",
             textTransform: "none",
-            '&:hover': {
-              background: "#B0B0B0", 
+            "&:hover": {
+              background: "#B0B0B0",
               color: "#fff"
-          }
+            }
           }}
         >
           Comprar Tickets
         </Button>
+      </Box>
+
+      {/* CAROUSEL */}
+
+      <Box
+        id="carousel-container"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "70vh",
+          // maxWidth: "100%",
+          position: "relative",
+          background: "plum"
+        }}
+      >
+        <EventCard />
       </Box>
     </Box>
   );

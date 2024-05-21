@@ -5,15 +5,30 @@
 
 /* LOGOS */
 
-#logo-header, #logo-footer{
+#logo-header,
+#logo-footer {
   width: 9rem;
   height: 9rem;
 }
 
+/* EVENTS CARD */
+.event-image {
+  width: 17.8125rem;
+  height: 17.8125rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 1.5625rem;
+  border: 5px solid rgba(234, 234, 234, 0.73);  
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.event-image:hover {
+  filter: grayscale(0%);
+}
 
 /* FOOTER */
-.social-icons{
+.social-icons {
   width: 4rem;
   height: 4rem;
 }
-
