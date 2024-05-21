@@ -1,88 +1,109 @@
-// import { useState, useCallback } from 'react';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../../assets/css/_default.css";
+import miniHero5 from "../../assets/img/mini-hero-5.jpg";
+import miniHero2 from "../../assets/img/mini-hero-2.jpg";
+import miniHero4 from "../../assets/img/mini-hero-4.jpg";
+import miniHero6 from "../../assets/img/mini-hero-6.jpg";
+import EventCard from "../eventCard/EventCard";
 
+function Carousel() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    centerPadding: "170px",
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
+  const events = [
+    {
+      id: 1,
+      image: miniHero5,
+      title: "Cúcuta Suena",
+      place: "Estadio General Santander",
+      date: "29/07/2024",
+      hour: "09:00 pm"
+    },
 
-// const Carousel = ({ items, active }) => {
-//   cconst items = [
-//     { image: 'https://source.unsplash.com/random/1', name: 'Item 1', description: 'Description 1' },
-//     { image: 'https://source.unsplash.com/random/2', name: 'Item 2', description: 'Description 2' },
-//     { image: 'https://source.unsplash.com/random/3', name: 'Item 3', description: 'Description 3' },
-//     { image: 'https://source.unsplash.com/random/4', name: 'Item 4', description: 'Description 4' },
-//     { image: 'https://source.unsplash.com/random/5', name: 'Item 5', description: 'Description 5' },
-//     { image: 'https://source.unsplash.com/random/6', name: 'Item 6', description: 'Description 6' },
-//     { image: 'https://source.unsplash.com/random/7', name: 'Item 7', description: 'Description 7' },
-//   ];
+    {
+      id: 2,
+      image: miniHero2,
+      title: "Mañana será bonito",
+      place: "Estadio Atanasio Girardot",
+      date: "29/07/2024",
+      hour: "09:00 pm"
+    },
 
-//   const [state, setState] = useState({
-//     items,
-//     active: 0,
-//     direction: '',
-//   });
+    {
+      id: 3,
+      image: miniHero4,
+      title: "Dread Mar I",
+      place: "Movistar Arena",
+      date: "29/07/2024",
+      hour: "09:00 pm"
+    },
 
-//   const generateItems = useCallback(() => {
-//     let level;
-//     const itemsToRender = [];
-//     for (let i = state.active - 2; i < state.active + 3; i++) {
-//       let index = i;
-//       if (i < 0) {
-//         index = state.items.length + i;
-//       } else if (i >= state.items.length) {
-//         index = i % state.items.length;
-//       }
-//       level = state.active - i;
-//       itemsToRender.push(<Item key={index} item={state.items[index]} level={level} />);
-//     }
-//     return itemsToRender;
-//   }, [state]);
+    {
+      id: 4,
+      image: miniHero6,
+      title: "Morat",
+      place: "Movistar Arena",
+      date: "29/07/2024",
+      hour: "09:00 pm"
+    }
+  ];
 
-//   const moveLeft = () => {
-//     setState((prevState) => {
-//       const newActive = prevState.active - 1;
-//       return {
-//         ...prevState,
-//         active: newActive < 0 ? prevState.items.length - 1 : newActive,
-//         direction: 'left',
-//       };
-//     });
-//   };
+  return (
+    <div className="slider-container">
+      <Slider {...settings}>
+        {events.map((event) => (
+          <div className="card" key={event.id}>
+            <EventCard
+              key={event.id}
+              image={event.image}
+              title={event.title}
+              place={event.place}
+              date={event.date}
+              hour={event.hour}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+}
 
-//   const moveRight = () => {
-//     setState((prevState) => {
-//       const newActive = prevState.active + 1;
-//       return {
-//         ...prevState,
-//         active: newActive % prevState.items.length,
-//         direction: 'right',
-//       };
-//     });
-//   };
-//   const moveRight = () => {
-//     setState((prevState) => {
-//       const newActive = prevState.active + 1;
-//       return {
-//         ...prevState,
-//         active: newActive % prevState.items.length,
-//         direction: 'right',
-//       };
-//     });
-//   };
-
-//   return (
-//     <div id="carousel" className="noselect">
-//       <div className="arrow arrow-left" onClick={moveLeft}>
-//         <i className="fi-arrow-left"></i>
-//       </div>
-//       <TransitionGroup className="carousel-group" component={null}>
-//         {generateItems()}
-//       </TransitionGroup>
-//       <div className="arrow arrow-right" onClick={moveRight}>
-//         <i className="fi-arrow-right"></i>
-//       </div>
-      
-//     </div>
-//   );
-// };
-
-// export default Carousel;
-
+export default Carousel;
