@@ -8,7 +8,7 @@
 /* LOGOS */
 
 #logo-header,
-#logo-footer {
+#logo-footer, #logo-gallery {
   width: 9rem;
   height: 9rem;
 }
@@ -55,6 +55,23 @@
   // set 60% height
   height: 0;
   padding-bottom: 65%;
+}
+
+/* PHOTO GALLERY */
+.photo{
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.photo:hover {
+  filter: grayscale(0%);
+  border-radius: 5px;
+  -moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transition: transform 0.5s ease;
 }
 
 /* FOOTER */

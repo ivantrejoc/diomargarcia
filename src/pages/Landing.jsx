@@ -1,10 +1,12 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
-import { Box, Typography, Link, Button } from "@mui/material";
+import { Box, Typography, Link, Button, Grid } from "@mui/material";
 import Carosuel from "../components/carousel/Carousel";
 import VideoGallery from "../components/videoGallery/VideoGallery";
+import PhotoGallery from "../components/photoGallery/PhotoGallery";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 import concertBackground from "../assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg";
+import heroJbalvin from "../assets/img/hero-party-3.jpg";
 
 export default function Landing() {
   const theme = useTheme();
@@ -202,7 +204,7 @@ export default function Landing() {
           alignItems: "center",
           width: "100vw",
           height: "100vh",
-          marginBottom: 10,
+          marginBottom: 20,
           // maxWidth: "100%",
           position: "relative"
         }}
@@ -211,9 +213,102 @@ export default function Landing() {
           <Box component="span" sx={{ textDecoration: "underline" }}>
             VIDEO
           </Box>
-        
         </Typography>
         <VideoGallery />
+      </Box>
+      {/* GALLERY SECTION */}
+      <Box
+        id="photo-gallery-container"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "start",
+          alignItems: "center",
+          width: "100vw",
+          height: "60vh",
+          marginBottom: 20,
+          // maxWidth: "100%",
+          position: "relative"
+        }}
+      >
+        <PhotoGallery />
+      </Box>
+        {/* HERO-2 SECTION */}
+      <Box
+        id="main-event-hero"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100vh",
+          maxHeight: "100vh",
+          position: "relative",
+          overflow: "hidden",
+          marginBottom: 10
+        }}
+      >
+        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+          <Box component="span" sx={{ textDecoration: "underline" }}>
+            EN
+          </Box>
+          <Box
+            component="span"
+            sx={{
+              color: "#FFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.5625rem",
+              fontStyle: "normal",
+              fontWeight: "500",
+              lineHeight: "normal"
+            }}
+          >
+            CARTELERA
+          </Box>
+        </Typography>
+        <Box
+          id="hero-container"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "95%",
+            height: "100%",
+            // maxWidth: "100%",
+            position: "relative",
+            backgroundImage: `url(${heroJbalvin})`,
+            backgroundSize: "100% 100%",
+            backgroundPosition: "center",
+            borderRadius: 5,
+            marginBottom: 2
+          }}
+        />
+        <Button
+          href="https://tuboleta.com/"
+          component="a"
+          sx={{
+            width: "22.6875rem",
+            height: "3.9375rem",
+            flexShrink: 0,
+            boxSizing: "border-box",
+            borderRadius: "1.5625rem",
+            background: "#D9D9D9",
+            color: "#000",
+            fontFamily: "Montserrat",
+            fontSize: "1.875rem",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "120%",
+            textTransform: "none",
+            "&:hover": {
+              background: "#B0B0B0",
+              color: "#fff"
+            }
+          }}
+        >
+          Comprar Tickets
+        </Button>
       </Box>
     </Box>
   );
