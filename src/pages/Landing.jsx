@@ -25,7 +25,9 @@ export default function Landing() {
   const nextEvents = useRef();
   const videoTitle = useRef();
   const video = useRef();
-  
+  const heroTwoTitle = useRef();
+  const heroTwo = useRef();
+  const heroTwoButton = useRef();
 
   useLayoutEffect(() => {
     // MAIN VIDEO
@@ -55,8 +57,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: mainEvent.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -75,8 +76,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: mainEventTitle.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -93,8 +93,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: mainEventButton.current,
           start: "top 95%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -115,8 +114,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: nextEventsTitle.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -137,8 +135,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: nextEventsTitle.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -157,8 +154,7 @@ export default function Landing() {
         scrollTrigger: {
           trigger: videoTitle.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -177,8 +173,62 @@ export default function Landing() {
         scrollTrigger: {
           trigger: video.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
+        }
+      }
+    );
+    // HERO-2
+    gsap.fromTo(
+      heroTwo.current,
+      {
+        x: 1000,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: heroTwo.current,
+          start: "top 80%",
+          end: "top 10%"
+        }
+      }
+    );
+
+    gsap.fromTo(
+      heroTwoTitle.current,
+      {
+        x: -1000,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: heroTwoTitle.current,
+          start: "top 80%",
+          end: "top 10%"
+        }
+      }
+    );
+
+    gsap.fromTo(
+      heroTwoButton.current,
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: heroTwoButton.current,
+          start: "top 95%",
+          end: "top 10%"
         }
       }
     );
@@ -464,7 +514,7 @@ export default function Landing() {
           variant="h2"
           component="h2"
           sx={{ marginBottom: 2 }}
-          ref={mainEventTitle}
+          ref={heroTwoTitle}
         >
           <Box component="span" sx={{ textDecoration: "underline" }}>
             EN
@@ -506,7 +556,7 @@ export default function Landing() {
               opacity: "1"
             }
           }}
-          ref={mainEvent}
+          ref={heroTwo}
         />
         <Button
           href="https://tuboleta.com/"
@@ -530,7 +580,7 @@ export default function Landing() {
               color: "#fff"
             }
           }}
-          ref={mainEventButton}
+          ref={heroTwoButton}
         >
           Comprar Tickets
         </Button>

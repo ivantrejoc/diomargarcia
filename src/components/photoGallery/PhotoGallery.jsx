@@ -36,8 +36,7 @@ const PhotoGallery = () => {
         scrollTrigger: {
           trigger: photoGallery.current,
           start: "top 80%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );
@@ -56,8 +55,7 @@ const PhotoGallery = () => {
         scrollTrigger: {
           trigger: galleryText.current,
           start: "top 90%",
-          end: "top 10%",
-          markers: true
+          end: "top 10%"
         }
       }
     );

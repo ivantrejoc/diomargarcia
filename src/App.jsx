@@ -1,5 +1,6 @@
-
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Router from "./router";
@@ -10,24 +11,31 @@ import "./assets/css/_default.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
 function App() {
+  const headerRef = useRef();
+
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {/*  <Loader show={config.loading} /> */}
       <BrowserRouter>
-      <Header />
+        <ScrollToTop />
+        <Header ref={headerRef} />
         <Router />
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
-
-
-
-  )
+  );
 }
 
-export default App
+export default App;
