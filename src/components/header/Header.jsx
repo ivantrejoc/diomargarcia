@@ -2,10 +2,25 @@ import { Box, Typography, Link } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import diomarLogo from "../../assets/img/logo-red.png";
 import { useLocation } from "react-router-dom";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 
 const Header = () => {
   const theme = useTheme();
   const location = useLocation();
+
+  // ANIMATIONS
+  const header = useRef();
+  useGSAP(() => {
+    gsap.fromTo(header.current, {
+      top: '100%', 
+    }, {
+      top: 0, 
+      duration: 5, 
+    });
+  })
 
   return (
     <Box
@@ -24,6 +39,7 @@ const Header = () => {
         position: "relative",
         backgroundSize: "cover"
       }}
+      ref={header}
     >
       <Box
         id="logo-container"

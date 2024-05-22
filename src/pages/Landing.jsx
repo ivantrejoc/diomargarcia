@@ -1,6 +1,9 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link, Button, Grid } from "@mui/material";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Carosuel from "../components/carousel/Carousel";
 import VideoGallery from "../components/videoGallery/VideoGallery";
 import PhotoGallery from "../components/photoGallery/PhotoGallery";
@@ -10,6 +13,35 @@ import heroJbalvin from "../assets/img/hero-party-3.jpg";
 
 export default function Landing() {
   const theme = useTheme();
+  // ANIMATIONS
+  const mainVideo = useRef();
+
+  // useGSAP(() => {
+  //   gsap.from(mainVideo.current, {
+  //     opacity: 0,
+  //     ease: "power2.out"
+  //   });
+  //   gsap.to(mainVideo.current, {
+  //     opacity: 1,
+  //     duration: 8,
+  //     ease: "power2.in"
+  //   });
+  // });
+
+  useGSAP(() => {
+    gsap.fromTo(mainVideo.current, 
+      {
+        opacity: 0,
+        x: -100
+      }, 
+      {
+        opacity: 1,
+        duration: 6,
+        x: 0,
+        ease: "power2.inOut",
+      }
+    );
+  });
 
   return (
     <Box
@@ -39,6 +71,7 @@ export default function Landing() {
           backgroundSize: "cover",
           overflow: "hidden"
         }}
+        ref={mainVideo}
       >
         <video
           autoPlay
@@ -233,7 +266,7 @@ export default function Landing() {
       >
         <PhotoGallery />
       </Box>
-        {/* HERO-2 SECTION */}
+      {/* HERO-2 SECTION */}
       <Box
         id="main-event-hero"
         sx={{
