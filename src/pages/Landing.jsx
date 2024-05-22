@@ -25,6 +25,7 @@ export default function Landing() {
   const nextEvents = useRef();
   const videoTitle = useRef();
   const video = useRef();
+  
 
   useLayoutEffect(() => {
     // MAIN VIDEO
@@ -435,7 +436,7 @@ export default function Landing() {
           justifyContent: "start",
           alignItems: "center",
           width: "100vw",
-          height: "60vh",
+          height: "80vh",
           marginBottom: 20,
           // maxWidth: "100%",
           position: "relative"
@@ -445,7 +446,7 @@ export default function Landing() {
       </Box>
       {/* HERO-2 SECTION */}
       <Box
-        id="main-event-hero"
+        id="hero-2"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -459,7 +460,12 @@ export default function Landing() {
           marginBottom: 10
         }}
       >
-        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{ marginBottom: 2 }}
+          ref={mainEventTitle}
+        >
           <Box component="span" sx={{ textDecoration: "underline" }}>
             EN
           </Box>
@@ -491,8 +497,16 @@ export default function Landing() {
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
             borderRadius: 5,
-            marginBottom: 2
+            marginBottom: 2,
+            opacity: "0.80",
+            filter: "grayscale(100%)",
+            transition: "filter 0.3s ease",
+            "&:hover": {
+              filter: "grayscale(0%)",
+              opacity: "1"
+            }
           }}
+          ref={mainEvent}
         />
         <Button
           href="https://tuboleta.com/"
@@ -516,6 +530,7 @@ export default function Landing() {
               color: "#fff"
             }
           }}
+          ref={mainEventButton}
         >
           Comprar Tickets
         </Button>

@@ -1,6 +1,6 @@
 import "../assets/css/_default.css";
-import { useTheme } from '@mui/material/styles';
-import{ Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
 
 export default function Gallery() {
   const theme = useTheme();
@@ -18,7 +18,9 @@ export default function Gallery() {
         backgroundSize: "cover"
       }}
     >
-      <Typography variant="h1" component="h1">GALLERY</Typography>
+      <Typography variant="h1" component="h1">
+        GALLERY
+      </Typography>
     </Box>
   );
 }
