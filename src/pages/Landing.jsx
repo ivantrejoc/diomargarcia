@@ -20,11 +20,14 @@ export default function Landing() {
   const mainVideo = useRef();
   const mainEvent = useRef();
   const mainEventTitle = useRef();
+  const mainEventButton = useRef();
   const nextEventsTitle = useRef();
   const nextEvents = useRef();
-
+  const videoTitle = useRef();
+  const video = useRef();
 
   useLayoutEffect(() => {
+    // MAIN VIDEO
     gsap.fromTo(
       mainVideo.current,
       {
@@ -36,12 +39,12 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-
+    // MAIN EVENT
     gsap.fromTo(
       mainEvent.current,
       {
         x: 1000,
-        opacity: 0,
+        opacity: 0
       },
       {
         x: 0,
@@ -61,7 +64,7 @@ export default function Landing() {
       mainEventTitle.current,
       {
         x: -1000,
-        opacity: 0,
+        opacity: 0
       },
       {
         x: 0,
@@ -77,7 +80,25 @@ export default function Landing() {
       }
     );
 
-     gsap.fromTo(
+    gsap.fromTo(
+      mainEventButton.current,
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: mainEventButton.current,
+          start: "top 95%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+    // NEXT EVENTS
+    gsap.fromTo(
       nextEventsTitle.current,
       {
         y: -200,
@@ -114,6 +135,46 @@ export default function Landing() {
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: nextEventsTitle.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+    // VIDEOS
+    gsap.fromTo(
+      videoTitle.current,
+      {
+        x: -1000,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: videoTitle.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+
+    gsap.fromTo(
+      video.current,
+      {
+        x: 1000,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: video.current,
           start: "top 80%",
           end: "top 10%",
           markers: true
@@ -223,14 +284,14 @@ export default function Landing() {
             height: "100%",
             // maxWidth: "100%",
             position: "relative",
-            backgroundImage: `url(${heroSilvestre})`,
+            backgroundImage: `url(${heroJbalvin})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
             borderRadius: 5,
             filter: "grayscale(100%)",
             transition: "filter 0.3s ease",
             marginBottom: 2,
-            "&:hover":{
+            "&:hover": {
               filter: "grayscale(0%)"
             }
           }}
@@ -258,6 +319,7 @@ export default function Landing() {
               color: "#fff"
             }
           }}
+          ref={mainEventButton}
         >
           Comprar Tickets
         </Button>
@@ -279,7 +341,12 @@ export default function Landing() {
           position: "relative"
         }}
       >
-        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }} ref={nextEventsTitle}>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{ marginBottom: 2 }}
+          ref={nextEventsTitle}
+        >
           <Box component="span" sx={{ textDecoration: "underline" }}>
             PRÓXIMOS
           </Box>
@@ -333,12 +400,31 @@ export default function Landing() {
           position: "relative"
         }}
       >
-        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{ marginBottom: 2 }}
+          ref={videoTitle}
+        >
           <Box component="span" sx={{ textDecoration: "underline" }}>
             VIDEO
           </Box>
         </Typography>
-        <VideoGallery />
+        <Box
+          id="video-container"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100vw",
+            height: "100%",
+            marginBottom: 10,
+            position: "relative"
+          }}
+          ref={video}
+        >
+          <VideoGallery />
+        </Box>
       </Box>
       {/* GALLERY SECTION */}
       <Box
@@ -401,7 +487,7 @@ export default function Landing() {
             height: "100%",
             // maxWidth: "100%",
             position: "relative",
-            backgroundImage: `url(${heroJbalvin})`,
+            backgroundImage: `url(${heroSilvestre})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
             borderRadius: 5,
