@@ -1,47 +1,74 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link, Button, Grid } from "@mui/material";
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Carosuel from "../components/carousel/Carousel";
 import VideoGallery from "../components/videoGallery/VideoGallery";
 import PhotoGallery from "../components/photoGallery/PhotoGallery";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 import concertBackground from "../assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg";
 import heroJbalvin from "../assets/img/hero-party-3.jpg";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
   const theme = useTheme();
+
   // ANIMATIONS
   const mainVideo = useRef();
-
-  // useGSAP(() => {
-  //   gsap.from(mainVideo.current, {
-  //     opacity: 0,
-  //     ease: "power2.out"
-  //   });
-  //   gsap.to(mainVideo.current, {
-  //     opacity: 1,
-  //     duration: 8,
-  //     ease: "power2.in"
-  //   });
-  // });
-
-  useGSAP(() => {
-    gsap.fromTo(mainVideo.current, 
+  const mainEvent = useRef();
+  const mainEventTitle = useRef();
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      mainVideo.current,
       {
-        opacity: 0,
-        x: -100
-      }, 
+        opacity: 0
+      },
       {
         opacity: 1,
-        duration: 6,
-        x: 0,
-        ease: "power2.inOut",
+        duration: 12,
+        ease: "power2.inOut"
       }
     );
-  });
+
+    gsap.fromTo(
+      mainEvent.current,
+      {
+        x: 1000
+      },
+      {
+        x: 0,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: mainEvent.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+
+    gsap.fromTo(
+      mainEventTitle.current,
+      {
+        x: -1000
+      },
+      {
+        x: 0,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: mainEventTitle.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+  }, []);
 
   return (
     <Box
@@ -111,7 +138,12 @@ export default function Landing() {
           marginBottom: 10
         }}
       >
-        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{ marginBottom: 2 }}
+          ref={mainEventTitle}
+        >
           <Box component="span" sx={{ textDecoration: "underline" }}>
             EVENTO
           </Box>
@@ -143,8 +175,14 @@ export default function Landing() {
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
             borderRadius: 5,
-            marginBottom: 2
+            filter: "grayscale(100%)",
+            transition: "filter 0.3s ease",
+            marginBottom: 2,
+            "&:hover":{
+              filter: "grayscale(0%)"
+            }
           }}
+          ref={mainEvent}
         />
         <Button
           href="https://tuboleta.com/"
