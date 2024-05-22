@@ -20,6 +20,10 @@ export default function Landing() {
   const mainVideo = useRef();
   const mainEvent = useRef();
   const mainEventTitle = useRef();
+  const nextEventsTitle = useRef();
+  const nextEvents = useRef();
+
+
   useLayoutEffect(() => {
     gsap.fromTo(
       mainVideo.current,
@@ -36,10 +40,12 @@ export default function Landing() {
     gsap.fromTo(
       mainEvent.current,
       {
-        x: 1000
+        x: 1000,
+        opacity: 0,
       },
       {
         x: 0,
+        opacity: 1,
         duration: 3,
         ease: "power2.inOut",
         scrollTrigger: {
@@ -54,14 +60,60 @@ export default function Landing() {
     gsap.fromTo(
       mainEventTitle.current,
       {
-        x: -1000
+        x: -1000,
+        opacity: 0,
       },
       {
         x: 0,
+        opacity: 1,
         duration: 3,
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: mainEventTitle.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+
+     gsap.fromTo(
+      nextEventsTitle.current,
+      {
+        y: -200,
+        opacity: 0,
+        zIndex: -1
+      },
+      {
+        y: 0,
+        zIndex: 999,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: nextEventsTitle.current,
+          start: "top 80%",
+          end: "top 10%",
+          markers: true
+        }
+      }
+    );
+
+    gsap.fromTo(
+      nextEvents.current,
+      {
+        y: 200,
+        opacity: 0,
+        zIndex: -1
+      },
+      {
+        y: 0,
+        zIndex: 999,
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: nextEventsTitle.current,
           start: "top 80%",
           end: "top 10%",
           markers: true
@@ -135,7 +187,7 @@ export default function Landing() {
           maxHeight: "100vh",
           position: "relative",
           overflow: "hidden",
-          marginBottom: 10
+          marginBottom: 15
         }}
       >
         <Typography
@@ -227,7 +279,7 @@ export default function Landing() {
           position: "relative"
         }}
       >
-        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }} ref={nextEventsTitle}>
           <Box component="span" sx={{ textDecoration: "underline" }}>
             PRÓXIMOS
           </Box>
@@ -261,6 +313,7 @@ export default function Landing() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center"
           }}
+          ref={nextEvents}
         >
           <Carosuel />
         </Box>
