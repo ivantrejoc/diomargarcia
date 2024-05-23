@@ -547,7 +547,10 @@ export default function Landing() {
           maxHeight: "100vh",
           position: "relative",
           overflow: "hidden",
-          marginBottom: 10
+          marginBottom: 10,
+          [theme.breakpoints.down("sm")]: {
+            height: "60vh"
+          }
         }}
       >
         <Typography
@@ -556,7 +559,15 @@ export default function Landing() {
           sx={{ marginBottom: 2 }}
           ref={heroTwoTitle}
         >
-          <Box component="span" sx={{ textDecoration: "underline" }}>
+          <Box
+            component="span"
+            sx={{
+              textDecoration: "underline",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
+            }}
+          >
             EN
           </Box>
           <Box
@@ -567,7 +578,10 @@ export default function Landing() {
               fontSize: "1.5625rem",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "normal"
+              lineHeight: "normal",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
             }}
           >
             CARTELERA
@@ -594,6 +608,12 @@ export default function Landing() {
             "&:hover": {
               filter: "grayscale(0%)",
               opacity: "1"
+            },
+            [theme.breakpoints.down("md")]: {
+              height: "60%"
+            },
+            [theme.breakpoints.down("sm")]: {
+              height: "50%"
             }
           }}
           ref={heroTwo}
@@ -618,6 +638,15 @@ export default function Landing() {
             "&:hover": {
               background: "#B0B0B0",
               color: "#fff"
+            },
+            [theme.breakpoints.down("md")]: {
+              width: "16.6875rem",
+              fontSize: "1.675rem"
+            },
+            [theme.breakpoints.down("sm")]: {
+              height: "2.9375rem",
+              width: "12.6875rem",
+              fontSize: "1.375rem"
             }
           }}
           ref={heroTwoButton}
