@@ -261,7 +261,13 @@ export default function Landing() {
           height: "100vh",
           marginBottom: 10,
           position: "relative",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
+          [theme.breakpoints.down("md")]:{
+            height: "85vh"
+          },
+          [theme.breakpoints.down("sm")]:{
+            height: "75vh"
+          }
         }}
         ref={mainVideo}
       >
