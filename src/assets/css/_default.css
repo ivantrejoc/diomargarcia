@@ -6,13 +6,35 @@
 /* LOGOS */
 
 #logo-header,
-#logo-footer, #logo-gallery {
+#logo-footer,
+#logo-gallery {
   width: 9rem;
   height: 9rem;
 }
 
-/* MAIN HERO */
+@media (max-width: 768px) {
+  #logo-header {
+    width: 6rem;
+    height: 6rem;
+  }
+}
 
+@media (max-width: 576px) {
+  #logo-header {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+/* BURGER MENU */
+#burger-container {
+  padding: 2rem 0;
+}
+
+#burger-icon {
+  width: 2rem;
+}
+/* MAIN HERO */
 
 /* EVENTS CARD */
 .event-image {
@@ -21,7 +43,7 @@
   flex-shrink: 0;
   box-sizing: border-box;
   border-radius: 1.5625rem;
-  border: 5px solid rgba(234, 234, 234, 0.73);  
+  border: 5px solid rgba(234, 234, 234, 0.73);
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -35,7 +57,7 @@
   /* background: blue; */
   width: 95%;
   margin: 0 auto;
-  border-radius: 25px;  
+  border-radius: 25px;
 }
 
 .slick-list {
@@ -59,7 +81,7 @@
 }
 
 /* PHOTO GALLERY */
-.photo{
+.photo {
   width: 100%;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
@@ -69,10 +91,10 @@
   filter: grayscale(0%);
   border-radius: 5px;
   -moz-transform: scale(1.2);
--webkit-transform: scale(1.2);
--o-transform: scale(1.2);
--ms-transform: scale(1.2);
-transition: transform 0.5s ease;
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transition: transform 0.5s ease;
 }
 
 /* FOOTER */

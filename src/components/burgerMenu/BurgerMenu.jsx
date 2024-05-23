@@ -13,7 +13,7 @@ const BurgerMenu = () => {
   };
 
   return (
-    <div>
+    <div id="burger-container">
       <Button
         id="fade-button"
         aria-controls={open ? "fade-menu" : undefined}
@@ -21,7 +21,7 @@ const BurgerMenu = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <img src={burgerIcon} alt="burger-icon" />
+        <img id="burger-icon" src={burgerIcon} alt="burger-icon" />
       </Button>
       <Menu
         id="fade-menu"

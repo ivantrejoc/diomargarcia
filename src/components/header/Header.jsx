@@ -22,14 +22,13 @@ const Header = forwardRef((props, ref) => {
     }
   }, [ref, location.pathname]);
 
-  console.log("EL MATCH DE isMobile:", isMobile );
+  console.log("EL MATCH DE isMobile:", isMobile);
   return (
     <Box
       id="header"
       component="header"
       sx={{
-        // background: "#000000",
-         background: "plum",
+        background: "#000000",
         display: "flex",
         justifyContent: "start",
         alignItems: "stretch",
@@ -39,7 +38,17 @@ const Header = forwardRef((props, ref) => {
         paddingX: 12,
         gap: 70,
         position: "relative",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        [theme.breakpoints.down("md")]: {
+          paddingX: 2,
+          gap: 11,
+          overflowX: "hidden"
+        },
+        [theme.breakpoints.down("sm")]: {
+          paddingX: 2,
+          gap: 3,
+          overflowX: "hidden"
+        }
       }}
       ref={ref}
     >
@@ -51,11 +60,25 @@ const Header = forwardRef((props, ref) => {
           alignItems: "center",
           width: "fit-content",
           height: "100%",
-          position: "relative"
+          position: "relative",
+          [theme.breakpoints.down("md")]: {
+            width: "70%"
+          },
+          [theme.breakpoints.down("sm")]: {
+            width: "70%"
+          }
         }}
       >
         <img id="logo-header" src={diomarLogo} alt="logo-diomar-garcia" />
-        <Typography variant="h1" component="h1">
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "1.3rem"
+            }
+          }}
+        >
           DIOMAR GARCÍA EVENTOS
         </Typography>
       </Box>
@@ -160,104 +183,6 @@ const Header = forwardRef((props, ref) => {
           </Link>
         </Box>
       )}
-
-      {/* <Box
-        id="links-container"
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 4,
-          width: "fit-content",
-          height: "100%",
-          position: "relative"
-        }}
-      >
-        <Link
-          href="/"
-          variant="navLinks"
-          underline="hover"
-          sx={{
-            color: location.pathname === "/" ? "#C60000" : "#FFFFFF",
-            fontFamily: "Montserrat",
-            fontSize: "1.35rem",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-            "&:focus": {
-              color: "#C60000"
-            },
-            "&:active": {
-              color: "#C60000"
-            }
-          }}
-        >
-          HOME
-        </Link>
-        <Link
-          href="/about"
-          variant="navLinks"
-          underline="hover"
-          sx={{
-            color: location.pathname === "/about" ? "#C60000" : "#FFFFFF",
-            fontFamily: "Montserrat",
-            fontSize: "1.35rem",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-            "&:focus": {
-              color: "#C60000"
-            },
-            "&:active": {
-              color: "#C60000"
-            }
-          }}
-        >
-          ABOUT
-        </Link>
-        <Link
-          href="/gallery"
-          variant="navLinks"
-          underline="hover"
-          sx={{
-            color: location.pathname === "/gallery" ? "#C60000" : "#FFFFFF",
-            fontFamily: "Montserrat",
-            fontSize: "1.35rem",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-            "&:focus": {
-              color: "#C60000"
-            },
-            "&:active": {
-              color: "#C60000"
-            }
-          }}
-        >
-          GALLERY
-        </Link>
-        <Link
-          href="/event"
-          variant="navLinks"
-          underline="hover"
-          sx={{
-            color: location.pathname === "/event" ? "#C60000" : "#FFFFFF",
-            fontFamily: "Montserrat",
-            fontSize: "1.35rem",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-            "&:focus": {
-              color: "#C60000"
-            },
-            "&:active": {
-              color: "#C60000"
-            }
-          }}
-        >
-          EVENT
-        </Link>
-      </Box> */}
     </Box>
   );
 });
