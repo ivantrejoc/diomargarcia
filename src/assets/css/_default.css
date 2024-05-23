@@ -13,14 +13,14 @@
 }
 
 @media (max-width: 768px) {
-  #logo-header {
+  #logo-header, #logo-footer {
     width: 6rem;
     height: 6rem;
   }
 }
 
 @media (max-width: 576px) {
-  #logo-header {
+  #logo-header, #logo-footer {
     width: 4.5rem;
     height: 4.5rem;
   }
@@ -101,4 +101,18 @@
 .social-icons {
   width: 4rem;
   height: 4rem;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-icons {
+    width: 2rem;
+    height: 2rem;
+  }
 }

@@ -392,10 +392,8 @@ export default function Landing() {
           alignItems: "center",
           width: "100%",
           maxWidth: "100%",
-          overflowX: "hidden",
           height: "100vh",
           marginBottom: 10,
-          // maxWidth: "100%",
           position: "relative"
         }}
       >
@@ -432,7 +430,7 @@ export default function Landing() {
             maxWidth: "100%",
             overflowX: "hidden",
             height: "90vh",
-            marginBottom: 10,            
+            marginBottom: 10,
             position: "relative",
             backgroundImage: `url(${concertBackground})`,
             backgroundSize: "cover",
