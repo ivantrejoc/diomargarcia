@@ -488,7 +488,13 @@ export default function Landing() {
           height: "100vh",
           marginBottom: 20,
           // maxWidth: "100%",
-          position: "relative"
+          position: "relative",
+          [theme.breakpoints.down("md")]: {
+            height: "80vh"
+          },
+          [theme.breakpoints.down("sm")]: {
+            height: "60vh"
+          }
         }}
       >
         <Typography
@@ -497,7 +503,15 @@ export default function Landing() {
           sx={{ marginBottom: 2 }}
           ref={videoTitle}
         >
-          <Box component="span" sx={{ textDecoration: "underline" }}>
+          <Box
+            component="span"
+            sx={{
+              textDecoration: "underline",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
+            }}
+          >
             VIDEO
           </Box>
         </Typography>
@@ -507,9 +521,9 @@ export default function Landing() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "100vw",
+            width: "100%",
             height: "100%",
-            marginBottom: 10,
+            marginBottom: 5,
             position: "relative"
           }}
           ref={video}

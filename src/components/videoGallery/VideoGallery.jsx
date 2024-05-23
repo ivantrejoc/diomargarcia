@@ -1,7 +1,10 @@
 import { Box } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import "../../assets/css/_default.css";
 
 const VideoGallery = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -9,7 +12,10 @@ const VideoGallery = () => {
         height: "90%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.down("sm")]:{
+          width: "98%",
+        }
       }}
     >
       <iframe
