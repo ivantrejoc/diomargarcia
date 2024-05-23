@@ -25,11 +25,11 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider theme={theme}>      
       {/*  <Loader show={config.loading} /> */}
       <BrowserRouter>
         <ScrollToTop />
+        <CssBaseline />
         <Header ref={headerRef} />
         <Router />
         <Footer />

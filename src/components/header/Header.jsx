@@ -1,13 +1,16 @@
 import { Box, Typography, Link } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import diomarLogo from "../../assets/img/logo-red.png";
 import { useLocation } from "react-router-dom";
 import { useEffect, forwardRef } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import BurgerMenu from "../burgerMenu/BurgerMenu";
 import gsap from "gsap";
+import diomarLogo from "../../assets/img/logo-red.png";
 
 const Header = forwardRef((props, ref) => {
   const theme = useTheme();
-  const location = useLocation(); 
+  const location = useLocation();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // Adjust breakpoint for tablets
 
   useEffect(() => {
     if (ref && ref.current) {
@@ -17,19 +20,21 @@ const Header = forwardRef((props, ref) => {
         { y: 0, opacity: 1, duration: 2.5, ease: "power2.inOut" }
       );
     }
-  }, [ref, location.pathname]); 
+  }, [ref, location.pathname]);
 
+  console.log("EL MATCH DE isMobile:", isMobile );
   return (
     <Box
       id="header"
       component="header"
       sx={{
-        background: "#000000",
+        // background: "#000000",
+         background: "plum",
         display: "flex",
         justifyContent: "start",
         alignItems: "stretch",
-        width: "100vw",
-        maxWidth: "100vw",
+        width: "100%",
+        maxWidth: "100%",
         height: "17vh",
         paddingX: 12,
         gap: 70,
@@ -54,8 +59,109 @@ const Header = forwardRef((props, ref) => {
           DIOMAR GARCÍA EVENTOS
         </Typography>
       </Box>
+      {isMobile && <BurgerMenu />}
 
-      <Box
+      {!isMobile && (
+        <Box
+          id="links-container"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 4,
+            width: "fit-content",
+            height: "100%",
+            position: "relative"
+          }}
+        >
+          <Link
+            href="/"
+            variant="navLinks"
+            underline="hover"
+            sx={{
+              color: location.pathname === "/" ? "#C60000" : "#FFFFFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.35rem",
+              fontStyle: "normal",
+              fontWeight: "400",
+              lineHeight: "normal",
+              "&:focus": {
+                color: "#C60000"
+              },
+              "&:active": {
+                color: "#C60000"
+              }
+            }}
+          >
+            HOME
+          </Link>
+          <Link
+            href="/about"
+            variant="navLinks"
+            underline="hover"
+            sx={{
+              color: location.pathname === "/about" ? "#C60000" : "#FFFFFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.35rem",
+              fontStyle: "normal",
+              fontWeight: "400",
+              lineHeight: "normal",
+              "&:focus": {
+                color: "#C60000"
+              },
+              "&:active": {
+                color: "#C60000"
+              }
+            }}
+          >
+            ABOUT
+          </Link>
+          <Link
+            href="/gallery"
+            variant="navLinks"
+            underline="hover"
+            sx={{
+              color: location.pathname === "/gallery" ? "#C60000" : "#FFFFFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.35rem",
+              fontStyle: "normal",
+              fontWeight: "400",
+              lineHeight: "normal",
+              "&:focus": {
+                color: "#C60000"
+              },
+              "&:active": {
+                color: "#C60000"
+              }
+            }}
+          >
+            GALLERY
+          </Link>
+          <Link
+            href="/event"
+            variant="navLinks"
+            underline="hover"
+            sx={{
+              color: location.pathname === "/event" ? "#C60000" : "#FFFFFF",
+              fontFamily: "Montserrat",
+              fontSize: "1.35rem",
+              fontStyle: "normal",
+              fontWeight: "400",
+              lineHeight: "normal",
+              "&:focus": {
+                color: "#C60000"
+              },
+              "&:active": {
+                color: "#C60000"
+              }
+            }}
+          >
+            EVENT
+          </Link>
+        </Box>
+      )}
+
+      {/* <Box
         id="links-container"
         sx={{
           display: "flex",
@@ -151,12 +257,11 @@ const Header = forwardRef((props, ref) => {
         >
           EVENT
         </Link>
-      </Box>
+      </Box> */}
     </Box>
   );
 });
 
-// Set the display name for the Header component
 Header.displayName = "Header";
 
 export default Header;

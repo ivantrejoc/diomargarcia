@@ -69,7 +69,7 @@ const PhotoGallery = () => {
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
-        width: "100vw",
+        width: "100%",
         height: "100%",
         marginBottom: 20,
         position: "relative"

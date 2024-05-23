@@ -243,8 +243,9 @@ export default function Landing() {
         alignItems: "stretch",
         flexDirection: "column",
         position: "relative",
-        width: "100vw"
-        // height: "800vh"
+        width: "100%",
+        maxWidth: "100%",
+        overflowX: "hidden"
       }}
     >
       {/* VIDEO SECTION */}
@@ -255,12 +256,12 @@ export default function Landing() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
+          maxWidth: "100%",
+          overflowX: "hidden",
           height: "100vh",
           marginBottom: 10,
-          // maxWidth: "100%",
           position: "relative",
-          backgroundSize: "cover",
-          overflow: "hidden"
+          backgroundSize: "cover"
         }}
         ref={mainVideo}
       >
@@ -270,6 +271,8 @@ export default function Landing() {
           muted
           style={{
             width: "100%",
+            maxWidth: "100%",
+            overflowX: "hidden",
             height: "100%",
             objectFit: "cover",
             position: "absolute",
@@ -295,6 +298,8 @@ export default function Landing() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
+          maxWidth: "100%",
+          overflowX: "hidden",
           height: "100vh",
           maxHeight: "100vh",
           position: "relative",
@@ -385,7 +390,9 @@ export default function Landing() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: "100vw",
+          width: "100%",
+          maxWidth: "100%",
+          overflowX: "hidden",
           height: "100vh",
           marginBottom: 10,
           // maxWidth: "100%",
@@ -421,10 +428,11 @@ export default function Landing() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "100vw",
+            width: "100%",
+            maxWidth: "100%",
+            overflowX: "hidden",
             height: "90vh",
-            marginBottom: 10,
-            // maxWidth: "100%",
+            marginBottom: 10,            
             position: "relative",
             backgroundImage: `url(${concertBackground})`,
             backgroundSize: "cover",
@@ -444,7 +452,7 @@ export default function Landing() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           marginBottom: 20,
           // maxWidth: "100%",
@@ -485,7 +493,7 @@ export default function Landing() {
           flexDirection: "column",
           justifyContent: "start",
           alignItems: "center",
-          width: "100vw",
+          width: "100%",
           height: "80vh",
           marginBottom: 20,
           // maxWidth: "100%",
