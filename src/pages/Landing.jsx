@@ -262,10 +262,10 @@ export default function Landing() {
           marginBottom: 10,
           position: "relative",
           backgroundSize: "cover",
-          [theme.breakpoints.down("md")]:{
+          [theme.breakpoints.down("md")]: {
             height: "85vh"
           },
-          [theme.breakpoints.down("sm")]:{
+          [theme.breakpoints.down("sm")]: {
             height: "75vh"
           }
         }}
@@ -310,7 +310,10 @@ export default function Landing() {
           maxHeight: "100vh",
           position: "relative",
           overflow: "hidden",
-          marginBottom: 15
+          marginBottom: 15,
+          [theme.breakpoints.down("sm")]: {
+            height: "60vh"
+          }
         }}
       >
         <Typography
@@ -319,7 +322,15 @@ export default function Landing() {
           sx={{ marginBottom: 2 }}
           ref={mainEventTitle}
         >
-          <Box component="span" sx={{ textDecoration: "underline" }}>
+          <Box
+            component="span"
+            sx={{
+              textDecoration: "underline",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
+            }}
+          >
             EVENTO
           </Box>
           <Box
@@ -330,7 +341,10 @@ export default function Landing() {
               fontSize: "1.5625rem",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "normal"
+              lineHeight: "normal",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
             }}
           >
             PRINCIPAL
@@ -344,7 +358,6 @@ export default function Landing() {
             alignItems: "center",
             width: "95%",
             height: "100%",
-            // maxWidth: "100%",
             position: "relative",
             backgroundImage: `url(${heroJbalvin})`,
             backgroundSize: "100% 100%",
@@ -355,6 +368,12 @@ export default function Landing() {
             marginBottom: 2,
             "&:hover": {
               filter: "grayscale(0%)"
+            },
+            [theme.breakpoints.down("md")]: {
+              height: "60%"
+            },
+            [theme.breakpoints.down("sm")]: {
+              height: "50%"
             }
           }}
           ref={mainEvent}
@@ -379,6 +398,15 @@ export default function Landing() {
             "&:hover": {
               background: "#B0B0B0",
               color: "#fff"
+            },
+            [theme.breakpoints.down("md")]: {
+              width: "16.6875rem",
+              fontSize: "1.675rem"
+            },
+            [theme.breakpoints.down("sm")]: {
+              height: "2.9375rem",
+              width: "12.6875rem",
+              fontSize: "1.375rem"
             }
           }}
           ref={mainEventButton}
