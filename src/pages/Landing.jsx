@@ -543,7 +543,13 @@ export default function Landing() {
           height: "80vh",
           marginBottom: 20,
           // maxWidth: "100%",
-          position: "relative"
+          position: "relative",
+          [theme.breakpoints.down("md")]: {
+            height: "60vh"
+          },
+          [theme.breakpoints.down("sm")]: {
+            height: "90vh"
+          }
         }}
       >
         <PhotoGallery />

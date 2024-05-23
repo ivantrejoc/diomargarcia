@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { useRef, useLayoutEffect } from "react";
+import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,6 +18,7 @@ import diomarLogo from "../../assets/img/logo-red.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const PhotoGallery = () => {
+  const theme = useTheme();
   const photoGallery = useRef();
   const galleryText = useRef();
 
@@ -61,6 +63,19 @@ const PhotoGallery = () => {
     );
   }, []);
 
+  const images = [
+    jBalvin,
+    karloG,
+    maluma,
+    badBunny,
+    carinLeon,
+    blessd,
+    silvestre,
+    carlosVives,
+    artist1,
+    artist2
+  ];
+
   return (
     <Box
       id="photo-gallery"
@@ -82,37 +97,13 @@ const PhotoGallery = () => {
         sx={{ marginBottom: 6 }}
         ref={photoGallery}
       >
-        <Grid item xs={1.2}>
-          <img className="photo" src={jBalvin} alt="j-balvin" />
-        </Grid>
-        <Grid item xs={1.2}>
-          <img className="photo" src={karloG} alt="KarolG" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={maluma} alt="maluma" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={badBunny} alt="bad-bunny" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={blessd} alt="blessd" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={silvestre} alt="silvestre-dangond" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={carlosVives} alt="carlos-vives" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={carinLeon} alt="carin-leon" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={artist1} alt="artist1" />
-        </Grid>
-        <Grid tem xs={1.2}>
-          <img className="photo" src={artist2} alt="artist2" />
-        </Grid>
+        {images.map((imagen, index) => (
+          <Grid item key={index} xs={2.4} sm={1.2} md={1.2}>
+            <img className="photo" src={imagen} alt={`Imagen ${index + 1}`} />
+          </Grid>
+        ))}
       </Grid>
+
       <Box
         id="photo-gallery-text"
         sx={{
@@ -127,7 +118,15 @@ const PhotoGallery = () => {
         ref={galleryText}
       >
         <Typography variant="h2" component="h2" sx={{ marginBottom: 2 }}>
-          <Box component="span" sx={{ textDecoration: "underline" }}>
+          <Box
+            component="span"
+            sx={{
+              textDecoration: "underline",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.2625rem"
+              }
+            }}
+          >
             SOLO ARTISTAS
           </Box>
           <Box
@@ -138,7 +137,10 @@ const PhotoGallery = () => {
               fontSize: "1.5625rem",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "normal"
+              lineHeight: "normal",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.2625rem"
+              }
             }}
           >
             del momento
@@ -148,7 +150,10 @@ const PhotoGallery = () => {
           variant="text"
           sx={{
             width: "60%",
-            marginBottom: 3
+            marginBottom: 3,
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "1.1625rem"
+            }
           }}
           align="center"
           justify="center"

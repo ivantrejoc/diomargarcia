@@ -13,14 +13,14 @@
 }
 
 @media (max-width: 768px) {
-  #logo-header, #logo-footer {
+  #logo-header, #logo-footer, #logo-gallery {
     width: 6rem;
     height: 6rem;
   }
 }
 
 @media (max-width: 576px) {
-  #logo-header, #logo-footer {
+  #logo-header, #logo-footer, #logo-gallery {
     width: 4.5rem;
     height: 4.5rem;
   }
