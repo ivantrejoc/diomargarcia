@@ -27,7 +27,6 @@
     "gsap": "^3.12.5",
     "lg-thumbnail": "^1.2.1",
     "lg-video": "^1.4.0",
-    "lightgallery": "^2.7.2",
     "material-react-table": "^2.12.1",
     "mui-one-time-password-input": "^1.1.2",
     "next-base64": "^1.1.0",
