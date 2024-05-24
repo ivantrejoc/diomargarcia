@@ -3,7 +3,6 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Typography, Link, Button, Grid } from "@mui/material";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Carosuel from "../components/carousel/Carousel";
 import VideoGallery from "../components/videoGallery/VideoGallery";
@@ -144,7 +143,7 @@ export default function Landing() {
       {
         y: 0,
         zIndex: 999,
-        opacity: 1,
+        opacity: 999,
         duration: 3,
         ease: "power2.inOut",
         scrollTrigger: {
@@ -775,7 +774,7 @@ export default function Landing() {
         >
           Comprar Tickets
         </Button>
-      </Box>
+      </Box>      
     </Box>
   );
 }
