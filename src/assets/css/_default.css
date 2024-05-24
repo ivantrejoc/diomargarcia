@@ -13,14 +13,18 @@
 }
 
 @media (max-width: 768px) {
-  #logo-header, #logo-footer, #logo-gallery {
+  #logo-header,
+  #logo-footer,
+  #logo-gallery {
     width: 6rem;
     height: 6rem;
   }
 }
 
 @media (max-width: 576px) {
-  #logo-header, #logo-footer, #logo-gallery {
+  #logo-header,
+  #logo-footer,
+  #logo-gallery {
     width: 4.5rem;
     height: 4.5rem;
   }
@@ -52,6 +56,14 @@
   filter: grayscale(0%);
 }
 
+@media (max-width: 768px) {
+  .event-image {
+    width: 12.8125rem;
+    height: 12.8125rem;
+    border-radius: 1.5625rem;
+  }
+}
+
 /* CAROUSEL */
 .slider-container {
   /* background: blue; */
@@ -60,22 +72,25 @@
   border-radius: 25px;
 }
 
+@media (max-width: 768px){
+  .slider-container{
+    width: 90%;
+  }
+}
 .slick-list {
-  overflow: hidden; /* Oculta la porción de las tarjetas adyacentes */
+  overflow: hidden; /
 }
 
 .slick-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Asegura que las tarjetas ocupen toda la altura del contenedor */
+  height: 100%; 
 }
 
 /* VIDEO */
 .inline-gallery-container {
-  width: 100%;
-
-  // set 60% height
+  width: 100%;  
   height: 0;
   padding-bottom: 65%;
 }

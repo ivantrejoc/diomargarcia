@@ -72,7 +72,7 @@ export default createTheme({
   components: {},
   breakpoints: {
     values: {
-      xs: 0,
+      xs: 425,
       sm: 576,
       md: 768,
       lg: 992,

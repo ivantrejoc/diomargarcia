@@ -446,7 +446,11 @@ export default function Landing() {
           sx={{ marginBottom: 2 }}
           ref={nextEventsTitle}
         >
-          <Box component="span" sx={{ textDecoration: "underline" }}>
+          <Box component="span" sx={{ textDecoration: "underline",
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "1.3625rem"
+            }
+           }}>
             PRÓXIMOS
           </Box>
           <Box
@@ -457,7 +461,10 @@ export default function Landing() {
               fontSize: "1.5625rem",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "normal"
+              lineHeight: "normal",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
             }}
           >
             EVENTOS

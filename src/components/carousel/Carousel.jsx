@@ -33,16 +33,32 @@ function Carousel() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          className: "center",
+          centerMode: true,
+          centerPadding: "190px",
+          slidesToShow: 1,
+          slidesToScroll: 0,
+          initialSlide: 0
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 576,
         settings: {
+          className: "center",
+          centerMode: true,
+          centerPadding: "110px",
           slidesToShow: 1,
           slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          className: "center",
+          centerMode: true,
+          centerPadding: "61px",
+          slidesToShow: 1,
+          slidesToScroll: 0
         }
       }
     ]
