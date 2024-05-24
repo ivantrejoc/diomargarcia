@@ -11,6 +11,7 @@ import PhotoGallery from "../components/photoGallery/PhotoGallery";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 import concertBackground from "../assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg";
 import heroJbalvin from "../assets/img/hero-party-3.jpg";
+import silvestreVideo from "/silvestre.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
@@ -287,10 +288,7 @@ export default function Landing() {
             // zIndex: -1
           }}
         >
-          <source
-            src="https://fileblocks.co/file/avovite/ffbb4a354f55bc24618622add3821c40.mp4"
-            type="video/mp4"
-          />
+          <source src={silvestreVideo} type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
       </Box>
