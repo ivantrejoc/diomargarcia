@@ -15,9 +15,13 @@
 @media (max-width: 768px) {
   #logo-header,
   #logo-footer,
-  #logo-gallery {
+  #logo-gallery{
     width: 6rem;
     height: 6rem;
+  }
+  #logo-main-video{
+    width: 15rem;
+    height: 15rem;
   }
 }
 
@@ -27,6 +31,10 @@
   #logo-gallery {
     width: 4.5rem;
     height: 4.5rem;
+  }
+  #logo-main-video{
+    width: 12rem;
+    height: 12rem;
   }
 }
 

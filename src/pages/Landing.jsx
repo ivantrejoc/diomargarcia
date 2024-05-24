@@ -295,9 +295,16 @@ export default function Landing() {
         </video>
         <Typography
           variant="text"
-          align="left|"
+          align="left"
           justify="center"        
-          sx={{color: "#FFF", fontSize: "7.5rem", fontWeight: "600", paddingLeft: 2 }}
+          sx={{color: "#FFF", fontSize: "7.5rem", fontWeight: "600", paddingLeft: 2,
+            [theme.breakpoints.down("md")]:{
+              fontSize: "4.5rem"
+            },
+            [theme.breakpoints.down("sm")]:{
+              fontSize: "2.75rem"
+            }
+           }}
         >
           ¡Nos tomamos la fiesta muy en serio!
         </Typography>
