@@ -19,7 +19,11 @@ export default function Landing() {
   const theme = useTheme();
 
   // ANIMATIONS
+  const mainVideoContainer = useRef();
   const mainVideo = useRef();
+  const mainVideoTitle = useRef();
+  const mainVideoLogo = useRef();
+  const mainEventContainer = useRef();
   const mainEvent = useRef();
   const mainEventTitle = useRef();
   const mainEventButton = useRef();
@@ -40,10 +44,68 @@ export default function Landing() {
       },
       {
         opacity: 1,
-        duration: 12,
+        duration: 6,
         ease: "power2.inOut"
       }
     );
+    gsap.fromTo(
+      mainVideoContainer.current,
+      {
+        x: 0
+      },
+      {
+    
+      }
+    );
+
+    gsap.fromTo(
+      mainVideoTitle.current,
+      {
+        x: -500,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 4,
+        ease: "power2.inOut"
+      }
+    );
+    
+    gsap.fromTo(
+      mainVideoLogo.current,
+      {
+        x: 500,
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 4,
+        ease: "power2.inOut"
+      }
+    );
+
+    gsap.fromTo(
+      mainEventContainer.current,
+      { 
+        y: 200, // Starting below
+        opacity: 0, // Invisible
+        zIndex: -1 // Behind
+      },
+      {
+        y: 0,
+        opacity: 200,
+        zIndex: 999, 
+        scrollTrigger: {
+          trigger: mainEventContainer.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      }
+    );
+
     // MAIN EVENT
     gsap.fromTo(
       mainEvent.current,
@@ -249,6 +311,7 @@ export default function Landing() {
         maxWidth: "100%",
         overflowX: "hidden"
       }}
+      ref={mainVideoContainer}
     >
       {/* VIDEO SECTION */}
       <Box
@@ -262,7 +325,7 @@ export default function Landing() {
           overflowX: "hidden",
           height: "100vh",
           paddingX: 4,
-          marginBottom: 10,
+          // marginBottom: 10,
           position: "relative",
           backgroundSize: "cover",
           [theme.breakpoints.down("md")]: {
@@ -296,19 +359,24 @@ export default function Landing() {
         <Typography
           variant="text"
           align="left"
-          justify="center"        
-          sx={{color: "#FFF", fontSize: "7.5rem", fontWeight: "600", paddingLeft: 2,
-            [theme.breakpoints.down("md")]:{
+          justify="center"
+          sx={{
+            color: "#FFF",
+            fontSize: "7.5rem",
+            fontWeight: "600",
+            paddingLeft: 2,
+            [theme.breakpoints.down("md")]: {
               fontSize: "4.5rem"
             },
-            [theme.breakpoints.down("sm")]:{
+            [theme.breakpoints.down("sm")]: {
               fontSize: "2.75rem"
             }
-           }}
+          }}
+          ref={mainVideoTitle}
         >
           ¡Nos tomamos la fiesta muy en serio!
         </Typography>
-        <img id="logo-main-video" src={diomarLogo} alt="diomar-logo" />
+        <img id="logo-main-video" src={diomarLogo} alt="diomar-logo" ref={mainVideoLogo} />
       </Box>
 
       {/* MAIN EVENT HERO */}
@@ -331,6 +399,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
+        ref={mainEventContainer}
       >
         <Typography
           variant="h2"
@@ -453,11 +522,15 @@ export default function Landing() {
           sx={{ marginBottom: 2 }}
           ref={nextEventsTitle}
         >
-          <Box component="span" sx={{ textDecoration: "underline",
-            [theme.breakpoints.down("sm")]: {
-              fontSize: "1.3625rem"
-            }
-           }}>
+          <Box
+            component="span"
+            sx={{
+              textDecoration: "underline",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "1.3625rem"
+              }
+            }}
+          >
             PRÓXIMOS
           </Box>
           <Box
@@ -492,7 +565,8 @@ export default function Landing() {
             backgroundImage: `url(${concertBackground})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
+            opacity: "0.60"
           }}
           ref={nextEvents}
         >
