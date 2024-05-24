@@ -1,6 +1,6 @@
 import "../assets/css/_default.css";
 import { useTheme } from "@mui/material/styles";
-import { Box, Typography, Link, Button, Grid } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -357,7 +357,7 @@ export default function Landing() {
           justify="center"
           sx={{
             color: "#FFF",
-            fontSize: "7.5rem",
+            fontSize: "6.5rem",
             fontWeight: "600",
             paddingLeft: 2,
             [theme.breakpoints.down("md")]: {
@@ -705,7 +705,7 @@ export default function Landing() {
               }
             }}
           >
-            CARTELERA
+            &nbsp;CARTELERA
           </Box>
         </Typography>
         <Box
@@ -774,7 +774,7 @@ export default function Landing() {
         >
           Comprar Tickets
         </Button>
-      </Box>      
+      </Box>
     </Box>
   );
 }

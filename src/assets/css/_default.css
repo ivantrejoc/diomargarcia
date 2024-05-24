@@ -12,6 +12,11 @@
   height: 9rem;
 }
 
+#logo-main-video{
+  width: 20rem;
+  height: 20rem;
+}
+
 @media (max-width: 768px) {
   #logo-header,
   #logo-footer,
