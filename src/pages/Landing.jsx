@@ -11,7 +11,8 @@ import PhotoGallery from "../components/photoGallery/PhotoGallery";
 import heroSilvestre from "../assets/img/hero-party-1.jpg";
 import concertBackground from "../assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg";
 import heroJbalvin from "../assets/img/hero-party-3.jpg";
-import silvestreVideo from "/silvestre.mp4";
+import silvestreVideo from "/silvestre-ta-malo.mp4";
+import diomarLogo from "../assets/img/logo-red.png";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
@@ -260,6 +261,7 @@ export default function Landing() {
           maxWidth: "100%",
           overflowX: "hidden",
           height: "100vh",
+          paddingX: 4,
           marginBottom: 10,
           position: "relative",
           backgroundSize: "cover",
@@ -284,13 +286,22 @@ export default function Landing() {
             objectFit: "cover",
             position: "absolute",
             top: 0,
-            left: 0
-            // zIndex: -1
+            left: 0,
+            zIndex: -1
           }}
         >
           <source src={silvestreVideo} type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
+        <Typography
+          variant="text"
+          align="left|"
+          justify="center"        
+          sx={{color: "#FFF", fontSize: "7.5rem", fontWeight: "600", paddingLeft: 2 }}
+        >
+          ¡Nos tomamos la fiesta muy en serio!
+        </Typography>
+        <img id="logo-main-video" src={diomarLogo} alt="diomar-logo" />
       </Box>
 
       {/* MAIN EVENT HERO */}
