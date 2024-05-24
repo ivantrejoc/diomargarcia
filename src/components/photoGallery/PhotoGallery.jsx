@@ -23,7 +23,7 @@ const PhotoGallery = () => {
   const galleryText = useRef();
 
   useLayoutEffect(() => {
-    // MAIN VIDEO
+    // PHOTO GALLERY
     gsap.fromTo(
       photoGallery.current,
       {
@@ -56,8 +56,8 @@ const PhotoGallery = () => {
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: galleryText.current,
-          start: "top 90%",
-          end: "top 10%"
+          start: "top 99%",
+          end: "top 50%"
         }
       }
     );

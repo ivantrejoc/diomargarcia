@@ -23,7 +23,6 @@ export default function Landing() {
   const mainVideo = useRef();
   const mainVideoTitle = useRef();
   const mainVideoLogo = useRef();
-  const mainEventContainer = useRef();
   const mainEvent = useRef();
   const mainEventTitle = useRef();
   const mainEventButton = useRef();
@@ -50,7 +49,6 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-   
 
     gsap.fromTo(
       mainVideoTitle.current,
@@ -65,7 +63,7 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-    
+
     gsap.fromTo(
       mainVideoLogo.current,
       {
@@ -79,48 +77,6 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-    parallaxItems.current.forEach(container =>{
-      gsap.fromTo(
-        container,
-        { 
-          y: 200, // Starting below
-          opacity: 0, // Invisible
-          zIndex: -1 // Behind
-        },
-        {
-          y: 0,
-          opacity: 200,
-          zIndex: 999, 
-          scrollTrigger: {
-            trigger: container,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        }
-      );
-    }
-
-    )
-    // gsap.fromTo(
-    //   mainEventContainer.current,
-    //   { 
-    //     y: 200, // Starting below
-    //     opacity: 0, // Invisible
-    //     zIndex: -1 // Behind
-    //   },
-    //   {
-    //     y: 0,
-    //     opacity: 200,
-    //     zIndex: 999, 
-    //     scrollTrigger: {
-    //       trigger: mainEventContainer.current,
-    //       start: "top bottom",
-    //       end: "bottom top",
-    //       scrub: true
-    //     }
-    //   }
-    // );
 
     // MAIN EVENT
     gsap.fromTo(
@@ -312,6 +268,30 @@ export default function Landing() {
         }
       }
     );
+    // PARALLAX
+    parallaxItems.current.forEach((container) => {
+      gsap.fromTo(
+        container,
+        {
+          y: 50, // Starting below
+          opacity: 0, // Invisible
+          zIndex: -1, // Behind
+          ease: "power3.inOut"
+        },
+        {
+          y: 0,
+          opacity: 200,
+          zIndex: 999,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        }
+      );
+    });
   }, []);
 
   return (
@@ -392,7 +372,12 @@ export default function Landing() {
         >
           ¡Nos tomamos la fiesta muy en serio!
         </Typography>
-        <img id="logo-main-video" src={diomarLogo} alt="diomar-logo" ref={mainVideoLogo} />
+        <img
+          id="logo-main-video"
+          src={diomarLogo}
+          alt="diomar-logo"
+          ref={mainVideoLogo}
+        />
       </Box>
 
       {/* MAIN EVENT HERO */}
@@ -415,7 +400,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
-        ref={item => parallaxItems.current[0] = item}
+        ref={(item) => (parallaxItems.current[0] = item)}
       >
         <Typography
           variant="h2"
@@ -531,7 +516,7 @@ export default function Landing() {
           marginBottom: 10,
           position: "relative"
         }}
-        ref={item => parallaxItems.current[1] = item}
+        ref={(item) => (parallaxItems.current[1] = item)}
       >
         <Typography
           variant="h2"
@@ -610,7 +595,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
-        ref={item => parallaxItems.current[2] = item}
+        ref={(item) => (parallaxItems.current[2] = item)}
       >
         <Typography
           variant="h2"
@@ -666,6 +651,7 @@ export default function Landing() {
             height: "90vh"
           }
         }}
+        ref={(item) => (parallaxItems.current[3] = item)}
       >
         <PhotoGallery />
       </Box>
@@ -687,6 +673,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
+        ref={(item) => (parallaxItems.current[4] = item)}
       >
         <Typography
           variant="h2"
