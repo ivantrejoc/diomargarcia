@@ -35,6 +35,8 @@ export default function Landing() {
   const heroTwo = useRef();
   const heroTwoButton = useRef();
 
+  const parallaxItems = useRef([]);
+
   useLayoutEffect(() => {
     // MAIN VIDEO
     gsap.fromTo(
@@ -77,26 +79,48 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-
-    gsap.fromTo(
-      mainEventContainer.current,
-      { 
-        y: 200, // Starting below
-        opacity: 0, // Invisible
-        zIndex: -1 // Behind
-      },
-      {
-        y: 0,
-        opacity: 200,
-        zIndex: 999, 
-        scrollTrigger: {
-          trigger: mainEventContainer.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
+    parallaxItems.current.forEach(container =>{
+      gsap.fromTo(
+        container,
+        { 
+          y: 200, // Starting below
+          opacity: 0, // Invisible
+          zIndex: -1 // Behind
+        },
+        {
+          y: 0,
+          opacity: 200,
+          zIndex: 999, 
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
         }
-      }
-    );
+      );
+    }
+
+    )
+    // gsap.fromTo(
+    //   mainEventContainer.current,
+    //   { 
+    //     y: 200, // Starting below
+    //     opacity: 0, // Invisible
+    //     zIndex: -1 // Behind
+    //   },
+    //   {
+    //     y: 0,
+    //     opacity: 200,
+    //     zIndex: 999, 
+    //     scrollTrigger: {
+    //       trigger: mainEventContainer.current,
+    //       start: "top bottom",
+    //       end: "bottom top",
+    //       scrub: true
+    //     }
+    //   }
+    // );
 
     // MAIN EVENT
     gsap.fromTo(
@@ -391,7 +415,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
-        ref={mainEventContainer}
+        ref={item => parallaxItems.current[0] = item}
       >
         <Typography
           variant="h2"
@@ -507,6 +531,7 @@ export default function Landing() {
           marginBottom: 10,
           position: "relative"
         }}
+        ref={item => parallaxItems.current[1] = item}
       >
         <Typography
           variant="h2"
@@ -585,6 +610,7 @@ export default function Landing() {
             height: "60vh"
           }
         }}
+        ref={item => parallaxItems.current[2] = item}
       >
         <Typography
           variant="h2"
