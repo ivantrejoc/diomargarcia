@@ -432,7 +432,7 @@ export default function Landing() {
               }
             }}
           >
-            PRINCIPAL
+            &nbsp;PRINCIPAL
           </Box>
         </Typography>
         <Box
@@ -548,7 +548,7 @@ export default function Landing() {
               }
             }}
           >
-            EVENTOS
+            &nbsp;EVENTOS
           </Box>
         </Typography>
         <Box

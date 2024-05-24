@@ -143,7 +143,7 @@ const PhotoGallery = () => {
               }
             }}
           >
-            del momento
+            &nbsp;del momento
           </Box>
         </Typography>
         <Typography
