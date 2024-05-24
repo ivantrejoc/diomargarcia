@@ -48,15 +48,7 @@ export default function Landing() {
         ease: "power2.inOut"
       }
     );
-    gsap.fromTo(
-      mainVideoContainer.current,
-      {
-        x: 0
-      },
-      {
-    
-      }
-    );
+   
 
     gsap.fromTo(
       mainVideoTitle.current,
@@ -156,8 +148,8 @@ export default function Landing() {
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: mainEventButton.current,
-          start: "top 95%",
-          end: "top 10%"
+          start: "top 99%",
+          end: "top 40%"
         }
       }
     );
@@ -394,7 +386,7 @@ export default function Landing() {
           maxHeight: "100vh",
           position: "relative",
           overflow: "hidden",
-          marginBottom: 15,
+          marginBottom: 25,
           [theme.breakpoints.down("sm")]: {
             height: "60vh"
           }
