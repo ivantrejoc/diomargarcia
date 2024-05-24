@@ -481,7 +481,7 @@ export default function Landing() {
             lineHeight: "120%",
             textTransform: "none",
             "&:hover": {
-              background: "#B0B0B0",
+              background: "#C60000",
               color: "#fff"
             },
             [theme.breakpoints.down("md")]: {
@@ -757,7 +757,7 @@ export default function Landing() {
             lineHeight: "120%",
             textTransform: "none",
             "&:hover": {
-              background: "#B0B0B0",
+              background: "#C60000",
               color: "#fff"
             },
             [theme.breakpoints.down("md")]: {

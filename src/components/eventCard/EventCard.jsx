@@ -98,22 +98,22 @@ const EventCard = ({ image, title, place, date, hour }) => {
         href="https://tuboleta.com/"
         component="a"
         sx={{
-          width: "17.6875rem",
-          height: "3.9375rem",
+          width: "15.6875rem",
+          height: "2.9375rem",
           flexShrink: 0,
           boxSizing: "border-box",
           borderRadius: "1.5625rem",
           background: "#D9D9D9",
           color: "#000",
           fontFamily: "Montserrat",
-          fontSize: "1.875rem",
+          fontSize: "1.575rem",
           fontStyle: "normal",
           fontWeight: "500",
           lineHeight: "120%",
           textTransform: "none",
           marginTop: 1,
           "&:hover": {
-            background: "#B0B0B0",
+            background: "#C60000",
             color: "#fff"
           },
           [theme.breakpoints.down("md")]: {
