@@ -320,7 +320,6 @@ export default function Landing() {
           overflowX: "hidden",
           height: "100vh",
           paddingX: 4,
-          // marginBottom: 10,
           position: "relative",
           backgroundSize: "cover",
           [theme.breakpoints.down("md")]: {
@@ -361,7 +360,7 @@ export default function Landing() {
             fontWeight: "600",
             paddingLeft: 2,
             [theme.breakpoints.down("md")]: {
-              fontSize: "4.5rem"
+              fontSize: "4rem"
             },
             [theme.breakpoints.down("sm")]: {
               fontSize: "2.75rem"
@@ -395,6 +394,9 @@ export default function Landing() {
           position: "relative",
           overflow: "hidden",
           marginBottom: 25,
+          [theme.breakpoints.down("md")]: {
+            height: "70vh"
+          },
           [theme.breakpoints.down("sm")]: {
             height: "60vh"
           }
@@ -511,7 +513,7 @@ export default function Landing() {
           alignItems: "center",
           width: "100%",
           maxWidth: "100%",
-          height: "100vh",
+          height: "100%",
           marginBottom: 10,
           position: "relative"
         }}
@@ -567,7 +569,10 @@ export default function Landing() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            opacity: "0.60"
+            opacity: "0.60",
+            [theme.breakpoints.down("md")]: {
+              height: "70vh"
+            }
           }}
           ref={nextEvents}
         >
@@ -641,10 +646,10 @@ export default function Landing() {
           width: "100%",
           height: "80vh",
           marginBottom: 20,
-          // maxWidth: "100%",
           position: "relative",
           [theme.breakpoints.down("md")]: {
-            height: "60vh"
+            height: "50vh",
+            marginBottom: 5
           },
           [theme.breakpoints.down("sm")]: {
             height: "90vh"
@@ -716,7 +721,6 @@ export default function Landing() {
             alignItems: "center",
             width: "95%",
             height: "100%",
-            // maxWidth: "100%",
             position: "relative",
             backgroundImage: `url(${heroSilvestre})`,
             backgroundSize: "100% 100%",

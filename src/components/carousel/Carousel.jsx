@@ -12,7 +12,7 @@ function Carousel() {
   const settings = {
     className: "center",
     centerMode: true,
-    centerPadding: "170px",
+    centerPadding: "100px",
     dots: true,
     infinite: true,
     autoplay: true,
@@ -22,8 +22,9 @@ function Carousel() {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
+          centerPadding: "40px",
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
@@ -31,14 +32,14 @@ function Carousel() {
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 834,
         settings: {
           className: "center",
           centerMode: true,
-          centerPadding: "190px",
-          slidesToShow: 1,
-          slidesToScroll: 0,
-          initialSlide: 0
+          centerPadding: "20px", // Reduce el padding para evitar superposición
+          slidesToShow: 2, // Reduce el número de slides visibles
+          slidesToScroll: 1,
+          
         }
       },
       {
@@ -106,16 +107,14 @@ function Carousel() {
     <div className="slider-container">
       <Slider {...settings}>
         {events.map((event) => (
-          <div className="card" key={event.id}>
-            <EventCard
-              key={event.id}
-              image={event.image}
-              title={event.title}
-              place={event.place}
-              date={event.date}
-              hour={event.hour}
-            />
-          </div>
+          <EventCard
+            key={event.id}
+            image={event.image}
+            title={event.title}
+            place={event.place}
+            date={event.date}
+            hour={event.hour}
+          />
         ))}
       </Slider>
     </div>

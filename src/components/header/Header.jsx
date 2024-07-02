@@ -39,15 +39,17 @@ const Header = forwardRef((props, ref) => {
         gap: 70,
         position: "relative",
         backgroundSize: "cover",
-        [theme.breakpoints.down("md")]: {
-          paddingX: 2,
-          gap: 11,
+        [theme.breakpoints.down("xxl")]: {
+          paddingX: 8,
+          gap: 20,
           overflowX: "hidden"
         },
-        [theme.breakpoints.down("sm")]: {
+        [theme.breakpoints.down("md")]: {
           paddingX: 2,
-          gap: 3,
-          overflowX: "hidden"
+          gap: 11
+        },
+        [theme.breakpoints.down("sm")]: {
+          gap: 3
         }
       }}
       ref={ref}
@@ -61,11 +63,13 @@ const Header = forwardRef((props, ref) => {
           width: "fit-content",
           height: "100%",
           position: "relative",
-          [theme.breakpoints.down("md")]: {
-            width: "70%"
+          [theme.breakpoints.down("xxl")]: {
+            width: "40%",
+            overflow: "hidden"
           },
-          [theme.breakpoints.down("sm")]: {
-            width: "70%"
+          [theme.breakpoints.down("md")]: {
+            width: "60%",
+            gapX: 4
           }
         }}
       >
@@ -88,6 +92,7 @@ const Header = forwardRef((props, ref) => {
         <Box
           id="links-container"
           sx={{
+            background: "blue",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

@@ -74,7 +74,7 @@ export default createTheme({
     values: {
       xs: 425,
       sm: 576,
-      md: 768,
+      md: 834,
       lg: 992,
       xl: 1200,
       xxl: 1530,

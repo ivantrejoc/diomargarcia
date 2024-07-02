@@ -17,7 +17,7 @@
   height: 20rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   #logo-header,
   #logo-footer,
   #logo-gallery{
@@ -69,25 +69,32 @@
   filter: grayscale(0%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .event-image {
-    width: 12.8125rem;
-    height: 12.8125rem;
+    width: 15.8125rem;
+    height: 15.8125rem;
+    border-radius: 1.5625rem;
+  }
+}
+
+@media (max-width: 834px) {
+  .event-image {
+    width: 10.8125rem;
+    height: 10.8125rem;
     border-radius: 1.5625rem;
   }
 }
 
 /* CAROUSEL */
-.slider-container {
-  /* background: blue; */
+.slider-container {  
   width: 95%;
   margin: 0 auto;
   border-radius: 25px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 834px){
   .slider-container{
-    width: 90%;
+    width: 85%;
   }
 }
 .slick-list {

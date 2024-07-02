@@ -22,7 +22,13 @@ const EventCard = ({ image, title, place, date, hour }) => {
           transform: "scale(1.03)",
           borderRadius: "1.8625rem"
         },
+        [theme.breakpoints.down("xxl")]: {
+          width: "20rem",
+          height: "30rem",
+          borderRadius: "1.2625rem"
+        },
         [theme.breakpoints.down("md")]: {
+          margin: "0 10px",
           width: "18rem",
           height: "27rem",
           borderRadius: "1.2625rem"
