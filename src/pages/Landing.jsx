@@ -311,7 +311,7 @@ export default function Landing() {
       {/* VIDEO SECTION */}
       <Box
         id="main-video"
-        sx={{          
+        sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -404,7 +404,7 @@ export default function Landing() {
           },
           [theme.breakpoints.down("sm")]: {
             height: "60vh",
-            marginBottom: 8,
+            marginBottom: 8
           }
         }}
         ref={(item) => (parallaxItems.current[0] = item)}
@@ -595,7 +595,7 @@ export default function Landing() {
           alignItems: "center",
           width: "100%",
           height: "100vh",
-          marginBottom: 20,          
+          marginBottom: 20,
           position: "relative",
           [theme.breakpoints.down("md")]: {
             height: "80vh"
@@ -643,17 +643,21 @@ export default function Landing() {
       {/* GALLERY SECTION */}
       <Box
         id="photo-gallery-container"
-        sx={{          
+        sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "start",
           alignItems: "center",
           width: "100%",
-          height: "80vh",
+          height: "90vh",
           marginBottom: 20,
           position: "relative",
+          [theme.breakpoints.down("xxl")]: {
+            height: "105vh"
+          },        
+
           [theme.breakpoints.down("md")]: {
-            height: "50vh",
+            height: "60vh",
             marginBottom: 5
           },
           [theme.breakpoints.down("sm")]: {

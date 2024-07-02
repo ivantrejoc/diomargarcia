@@ -78,7 +78,7 @@ const PhotoGallery = () => {
   return (
     <Box
       id="photo-gallery"
-      sx={{        
+      sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "start",
@@ -88,9 +88,9 @@ const PhotoGallery = () => {
         overflow: "hidden",
         marginBottom: 20,
         position: "relative",
-        [theme.breakpoints.down("sm")]:{
+        [theme.breakpoints.down("sm")]: {
           height: "fit-content",
-          marginBottom: 0,
+          marginBottom: 0
         }
       }}
     >
