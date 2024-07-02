@@ -70,6 +70,14 @@ const Header = forwardRef((props, ref) => {
           [theme.breakpoints.down("md")]: {
             width: "60%",
             gapX: 4
+          },
+          [theme.breakpoints.down("sm")]: {
+            width: "70%",
+            gapX: 4
+          },
+          [theme.breakpoints.down("xs")]: {
+            width: "90%",
+            gapX: 4
           }
         }}
       >
@@ -80,6 +88,9 @@ const Header = forwardRef((props, ref) => {
           sx={{
             [theme.breakpoints.down("sm")]: {
               fontSize: "1.3rem"
+            },
+            [theme.breakpoints.down("xs")]: {
+              fontSize: "1rem"
             }
           }}
         >
@@ -92,7 +103,6 @@ const Header = forwardRef((props, ref) => {
         <Box
           id="links-container"
           sx={{
-            background: "blue",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

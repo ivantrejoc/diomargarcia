@@ -33,7 +33,7 @@ const EventCard = ({ image, title, place, date, hour }) => {
           height: "27rem",
           borderRadius: "1.2625rem"
         },
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
           width: "15rem",
           height: "27rem",
           borderRadius: "1.2625rem"

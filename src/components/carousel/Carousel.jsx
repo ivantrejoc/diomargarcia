@@ -38,8 +38,7 @@ function Carousel() {
           centerMode: true,
           centerPadding: "20px", // Reduce el padding para evitar superposición
           slidesToShow: 2, // Reduce el número de slides visibles
-          slidesToScroll: 1,
-          
+          slidesToScroll: 1
         }
       },
       {
@@ -47,21 +46,12 @@ function Carousel() {
         settings: {
           className: "center",
           centerMode: true,
-          centerPadding: "110px",
+          centerPadding: "3rem",
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 3
         }
       },
-      {
-        breakpoint: 425,
-        settings: {
-          className: "center",
-          centerMode: true,
-          centerPadding: "61px",
-          slidesToShow: 1,
-          slidesToScroll: 0
-        }
-      }
+     
     ]
   };
 

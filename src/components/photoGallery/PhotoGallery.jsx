@@ -2,7 +2,6 @@ import { Box, Grid, Typography } from "@mui/material";
 import { useRef, useLayoutEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import jBalvin from "../../assets/img/FOTO 600X600 02.jpg";
 import karloG from "../../assets/img/FOTO 600X600 01.jpg";
@@ -79,15 +78,20 @@ const PhotoGallery = () => {
   return (
     <Box
       id="photo-gallery"
-      sx={{
+      sx={{        
         display: "flex",
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
         width: "100%",
         height: "100%",
+        overflow: "hidden",
         marginBottom: 20,
-        position: "relative"
+        position: "relative",
+        [theme.breakpoints.down("sm")]:{
+          height: "fit-content",
+          marginBottom: 0,
+        }
       }}
     >
       <Grid

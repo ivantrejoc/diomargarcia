@@ -311,7 +311,7 @@ export default function Landing() {
       {/* VIDEO SECTION */}
       <Box
         id="main-video"
-        sx={{
+        sx={{          
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -363,7 +363,12 @@ export default function Landing() {
               fontSize: "4rem"
             },
             [theme.breakpoints.down("sm")]: {
-              fontSize: "2.75rem"
+              paddingLeft: 3,
+              fontSize: "2.5rem"
+            },
+            [theme.breakpoints.down("xs")]: {
+              paddingLeft: 3,
+              fontSize: "2.5rem"
             }
           }}
           ref={mainVideoTitle}
@@ -398,7 +403,8 @@ export default function Landing() {
             height: "70vh"
           },
           [theme.breakpoints.down("sm")]: {
-            height: "60vh"
+            height: "60vh",
+            marginBottom: 8,
           }
         }}
         ref={(item) => (parallaxItems.current[0] = item)}
@@ -589,8 +595,7 @@ export default function Landing() {
           alignItems: "center",
           width: "100%",
           height: "100vh",
-          marginBottom: 20,
-          // maxWidth: "100%",
+          marginBottom: 20,          
           position: "relative",
           [theme.breakpoints.down("md")]: {
             height: "80vh"
@@ -638,7 +643,7 @@ export default function Landing() {
       {/* GALLERY SECTION */}
       <Box
         id="photo-gallery-container"
-        sx={{
+        sx={{          
           display: "flex",
           flexDirection: "column",
           justifyContent: "start",
@@ -652,7 +657,7 @@ export default function Landing() {
             marginBottom: 5
           },
           [theme.breakpoints.down("sm")]: {
-            height: "90vh"
+            height: "fit-content"
           }
         }}
         ref={(item) => (parallaxItems.current[3] = item)}
